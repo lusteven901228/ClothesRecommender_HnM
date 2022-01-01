@@ -12,8 +12,8 @@ hm-sport,trousers-joggers,"1,2,3,4",2
 hm-sport,tops,4,1
 hm-sport,shorts,"4,5,6,7",2
 hm-sport,jackets,"1,2,3,4",
-hm-sport,bottoms,"4,5",3
-hm-sport,leggings-tights,"3,4",3
+hm-sport,bottoms,"4,5",2
+hm-sport,leggings-tights,"3,4",2
 hm-sport,sport-accessories,"1,2,3,4,5,6",5
 shirts,long-sleeve,"1,2,3,4",1
 shirts,casual,x,1
@@ -47,10 +47,9 @@ jackets-and-coats,waterproof,"1,2,3",3
 jackets-and-coats,windbreaker-jackets,"1,2",3
 jackets-and-coats,trench-coats,"1,2,3",3
 cardigans-and-jumpers,turtleneck-jumpers,"1,2,3",1
-blazers-and-suits,blazers,"3,4",3
-blazers-and-suits,suits,"3,4",3
-blazers-and-suits,waistcoats,"3,4",3
-blazers-and-suits,suit-trousers,"3,4",2
+blazers-and-suits,blazers,"2,3",3
+blazers-and-suits,waistcoats,"2,3",3
+blazers-and-suits,suit-trousers,"2,3,4",2
 socks,trainer-socks,x,5
 blazers-and-suits,premium-quality,x,3
 socks,sports-socks,x,5
