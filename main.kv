@@ -1,0 +1,3154 @@
+<SelectionScreen>:
+    background_color: 1, 1, 1, 1
+    canvas:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    SelectionScreenBoxLayout:
+        orientation:'vertical'
+        SelectionTitleBoxLayout:
+            orientation:'horizontal'
+            size_hint_y: None
+            height: 70
+            Label:
+                text:'篩選'
+                font_name: 'fonts/font1.ttf'
+                # ont_name: 'font/font1.ttf'
+                color: 0 , 0 , 0 , 1
+            Button:
+                background_normal: 'images/refresh_normal.png'
+                background_down: 'images/refresh_down.png'
+                color: 0 , 0 , 0 , 1
+                size_hint_x: None
+                width: 70
+                on_release: root.reset()
+        ScrollView:
+            SubGridLayout:
+                size_hint_y: None
+                height: root.grid_height
+                cols: 2
+                spacing: 0, 20
+                Label:
+                    text:'服裝性別'
+                    font_name: 'fonts/font1.ttf'
+                    size_hint_y: None
+                    height: root.gender_label_size
+                    color: 0 , 0 , 0 , 1
+                GenderDropDown:
+                    orientation:'lr-tb'
+                    Button:
+                        text:root.gender_main_button_text
+                        background_normal: 'images/dropdown_normal.png'
+                        background_down: 'images/dropdown_down.png'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.gender_toggle_expand(root.gender_main_button_text)
+                        size_hint_y: None
+                        height:100
+                    Button:
+                        text:'男裝'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.gender_toggle_expand('男裝', 'men')
+                        size_hint_y: None
+                        height:root.gender_button_size
+                        opacity: root.gender_button_opacity
+                    Button:
+                        text:'女裝'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.gender_toggle_expand('女裝', 'ladies')
+                        size_hint_y: None
+                        height: root.gender_button_size
+                        opacity: root.gender_button_opacity
+                    Widget: #fill the rest of the canvas
+                Label:
+                    text:'縣市'
+                    font_name: 'fonts/font1.ttf'
+                    size_hint_y: None
+                    height:root.city_label_size
+                    color: 0 , 0 , 0 , 1
+                CityDropDown:
+                    orientation:'lr-tb'
+                    Button:
+                        text:root.city_main_button_text
+                        background_normal: 'images/dropdown_normal.png'
+                        background_down: 'images/dropdown_down.png'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand(root.city_main_button_text)
+                        size_hint_y: None
+                        height:100
+                    Button:
+                        text:'宜蘭縣'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('宜蘭縣','F-D0047-001')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'桃園市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('桃園市','F-D0047-005')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'新竹縣'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('新竹縣','F-D0047-009')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'苗栗縣'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('苗栗縣','F-D0047-013')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'彰化縣'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('彰化縣','F-D0047-017')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'南投縣'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('南投縣','F-D0047-021')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'雲林縣'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('雲林縣','F-D0047-025')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'嘉義縣'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('嘉義縣','F-D0047-029')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'屏東縣'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('屏東縣','F-D0047-033')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'臺東縣'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('臺東縣','F-D0047-037')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'花蓮縣'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('花蓮縣','F-D0047-041')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'澎湖縣'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('澎湖縣','F-D0047-045')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'基隆市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('基隆市','F-D0047-049')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'新竹市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('新竹市','F-D0047-053')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'嘉義市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('嘉義市','F-D0047-057')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'臺北市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('臺北市','F-D0047-061')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'高雄市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('高雄市','F-D0047-065')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'新北市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('新北市','F-D0047-069')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'臺中市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('臺中市','F-D0047-073')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'臺南市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('臺南市','F-D0047-077')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'連江縣'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('連江縣','F-D0047-081')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                    Button:
+                        text:'金門縣'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.city_toggle_expand('金門縣','F-D0047-085')
+                        size_hint_y: None
+                        height:root.city_button_size
+                        opacity: root.city_button_opacity
+                Label:
+                    text:'鄉鎮市區'
+                    font_name: 'fonts/font1.ttf'
+                    size_hint_y: None
+                    height:root.region_label_size
+                    color: 0 , 0 , 0 , 1
+                RegionDropDown:
+                    orientation:'lr-tb'
+                    Button:
+                        text:root.region_main_button_text
+                        background_normal: 'images/dropdown_normal.png'
+                        background_down: 'images/dropdown_down.png'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('鄉鎮市區')
+                        size_hint_y: None
+                        height:100
+                        disabled:not root.city_chosen
+                    Button:
+                        text:'頭城鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('頭城鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizea
+                        opacity: root.regiongroup_button_opacitya
+                    Button:
+                        text:'礁溪鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('礁溪鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizea
+                        opacity: root.regiongroup_button_opacitya
+                    Button:
+                        text:'壯圍鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('壯圍鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizea
+                        opacity: root.regiongroup_button_opacitya
+                    Button:
+                        text:'員山鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('員山鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizea
+                        opacity: root.regiongroup_button_opacitya
+                    Button:
+                        text:'宜蘭市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('宜蘭市')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizea
+                        opacity: root.regiongroup_button_opacitya
+                    Button:
+                        text:'大同鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大同鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizea
+                        opacity: root.regiongroup_button_opacitya
+                    Button:
+                        text:'五結鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('五結鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizea
+                        opacity: root.regiongroup_button_opacitya
+                    Button:
+                        text:'三星鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('三星鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizea
+                        opacity: root.regiongroup_button_opacitya
+                    Button:
+                        text:'羅東鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('羅東鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizea
+                        opacity: root.regiongroup_button_opacitya
+                    Button:
+                        text:'冬山鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('冬山鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizea
+                        opacity: root.regiongroup_button_opacitya
+                    Button:
+                        text:'南澳鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('南澳鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizea
+                        opacity: root.regiongroup_button_opacitya
+                    Button:
+                        text:'蘇澳鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('蘇澳鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizea
+                        opacity: root.regiongroup_button_opacitya
+                    Button:
+                        text:'大園區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大園區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeb
+                        opacity: root.regiongroup_button_opacityb
+                    Button:
+                        text:'蘆竹區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('蘆竹區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeb
+                        opacity: root.regiongroup_button_opacityb
+                    Button:
+                        text:'觀音區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('觀音區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeb
+                        opacity: root.regiongroup_button_opacityb
+                    Button:
+                        text:'龜山區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('龜山區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeb
+                        opacity: root.regiongroup_button_opacityb
+                    Button:
+                        text:'桃園區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('桃園區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeb
+                        opacity: root.regiongroup_button_opacityb
+                    Button:
+                        text:'中壢區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('中壢區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeb
+                        opacity: root.regiongroup_button_opacityb
+                    Button:
+                        text:'新屋區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('新屋區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeb
+                        opacity: root.regiongroup_button_opacityb
+                    Button:
+                        text:'八德區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('八德區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeb
+                        opacity: root.regiongroup_button_opacityb
+                    Button:
+                        text:'平鎮區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('平鎮區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeb
+                        opacity: root.regiongroup_button_opacityb
+                    Button:
+                        text:'楊梅區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('楊梅區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeb
+                        opacity: root.regiongroup_button_opacityb
+                    Button:
+                        text:'大溪區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大溪區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeb
+                        opacity: root.regiongroup_button_opacityb
+                    Button:
+                        text:'龍潭區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('龍潭區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeb
+                        opacity: root.regiongroup_button_opacityb
+                    Button:
+                        text:'復興區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('復興區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeb
+                        opacity: root.regiongroup_button_opacityb
+                    Button:
+                        text:'新豐鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('新豐鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizec
+                        opacity: root.regiongroup_button_opacityc
+                    Button:
+                        text:'湖口鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('湖口鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizec
+                        opacity: root.regiongroup_button_opacityc
+                    Button:
+                        text:'新埔鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('新埔鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizec
+                        opacity: root.regiongroup_button_opacityc
+                    Button:
+                        text:'竹北市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('竹北市')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizec
+                        opacity: root.regiongroup_button_opacityc
+                    Button:
+                        text:'關西鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('關西鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizec
+                        opacity: root.regiongroup_button_opacityc
+                    Button:
+                        text:'芎林鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('芎林鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizec
+                        opacity: root.regiongroup_button_opacityc
+                    Button:
+                        text:'竹東鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('竹東鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizec
+                        opacity: root.regiongroup_button_opacityc
+                    Button:
+                        text:'寶山鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('寶山鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizec
+                        opacity: root.regiongroup_button_opacityc
+                    Button:
+                        text:'尖石鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('尖石鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizec
+                        opacity: root.regiongroup_button_opacityc
+                    Button:
+                        text:'橫山鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('橫山鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizec
+                        opacity: root.regiongroup_button_opacityc
+                    Button:
+                        text:'北埔鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('北埔鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizec
+                        opacity: root.regiongroup_button_opacityc
+                    Button:
+                        text:'峨眉鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('峨眉鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizec
+                        opacity: root.regiongroup_button_opacityc
+                    Button:
+                        text:'五峰鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('五峰鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizec
+                        opacity: root.regiongroup_button_opacityc
+                    Button:
+                        text:'竹南鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('竹南鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'頭份市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('頭份市')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'三灣鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('三灣鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'造橋鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('造橋鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'後龍鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('後龍鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'南庄鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('南庄鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'頭屋鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('頭屋鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'獅潭鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('獅潭鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'苗栗市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('苗栗市')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'西湖鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('西湖鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'通霄鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('通霄鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'公館鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('公館鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'銅鑼鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('銅鑼鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'泰安鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('泰安鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'苑裡鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('苑裡鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'大湖鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大湖鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'三義鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('三義鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'卓蘭鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('卓蘭鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sized
+                        opacity: root.regiongroup_button_opacityd
+                    Button:
+                        text:'伸港鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('伸港鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'和美鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('和美鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'線西鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('線西鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'鹿港鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('鹿港鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'彰化市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('彰化市')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'秀水鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('秀水鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'福興鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('福興鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'花壇鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('花壇鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'芬園鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('芬園鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'芳苑鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('芳苑鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'埔鹽鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('埔鹽鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'大村鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大村鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'二林鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('二林鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'員林市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('員林市')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'溪湖鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('溪湖鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'埔心鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('埔心鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'永靖鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('永靖鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'社頭鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('社頭鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'埤頭鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('埤頭鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'田尾鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('田尾鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'大城鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大城鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'田中鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('田中鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'北斗鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('北斗鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'竹塘鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('竹塘鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'溪州鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('溪州鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'二水鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('二水鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizee
+                        opacity: root.regiongroup_button_opacitye
+                    Button:
+                        text:'仁愛鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('仁愛鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizef
+                        opacity: root.regiongroup_button_opacityf
+                    Button:
+                        text:'國姓鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('國姓鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizef
+                        opacity: root.regiongroup_button_opacityf
+                    Button:
+                        text:'埔里鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('埔里鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizef
+                        opacity: root.regiongroup_button_opacityf
+                    Button:
+                        text:'草屯鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('草屯鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizef
+                        opacity: root.regiongroup_button_opacityf
+                    Button:
+                        text:'中寮鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('中寮鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizef
+                        opacity: root.regiongroup_button_opacityf
+                    Button:
+                        text:'南投市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('南投市')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizef
+                        opacity: root.regiongroup_button_opacityf
+                    Button:
+                        text:'魚池鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('魚池鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizef
+                        opacity: root.regiongroup_button_opacityf
+                    Button:
+                        text:'水里鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('水里鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizef
+                        opacity: root.regiongroup_button_opacityf
+                    Button:
+                        text:'名間鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('名間鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizef
+                        opacity: root.regiongroup_button_opacityf
+                    Button:
+                        text:'信義鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('信義鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizef
+                        opacity: root.regiongroup_button_opacityf
+                    Button:
+                        text:'集集鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('集集鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizef
+                        opacity: root.regiongroup_button_opacityf
+                    Button:
+                        text:'竹山鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('竹山鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizef
+                        opacity: root.regiongroup_button_opacityf
+                    Button:
+                        text:'鹿谷鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('鹿谷鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizef
+                        opacity: root.regiongroup_button_opacityf
+                    Button:
+                        text:'麥寮鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('麥寮鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'二崙鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('二崙鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'崙背鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('崙背鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'西螺鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('西螺鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'莿桐鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('莿桐鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'林內鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('林內鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'臺西鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('臺西鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'土庫鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('土庫鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'虎尾鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('虎尾鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'褒忠鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('褒忠鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'東勢鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('東勢鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'斗南鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('斗南鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'四湖鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('四湖鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'古坑鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('古坑鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'元長鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('元長鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'大埤鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大埤鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'口湖鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('口湖鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'北港鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('北港鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'水林鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('水林鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'斗六市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('斗六市')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeg
+                        opacity: root.regiongroup_button_opacityg
+                    Button:
+                        text:'大林鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大林鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'溪口鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('溪口鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'阿里山鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('阿里山鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'梅山鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('梅山鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'新港鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('新港鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'民雄鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('民雄鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'六腳鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('六腳鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'竹崎鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('竹崎鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'東石鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('東石鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'太保市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('太保市')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'番路鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('番路鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'朴子市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('朴子市')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'水上鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('水上鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'中埔鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('中埔鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'布袋鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('布袋鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'鹿草鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('鹿草鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'義竹鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('義竹鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'大埔鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大埔鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeh
+                        opacity: root.regiongroup_button_opacityh
+                    Button:
+                        text:'高樹鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('高樹鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'三地門鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('三地門鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'霧臺鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('霧臺鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'里港鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('里港鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'鹽埔鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('鹽埔鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'九如鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('九如鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'長治鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('長治鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'瑪家鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('瑪家鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'屏東市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('屏東市')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'內埔鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('內埔鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'麟洛鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('麟洛鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'泰武鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('泰武鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'萬巒鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('萬巒鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'竹田鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('竹田鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'萬丹鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('萬丹鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'來義鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('來義鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'潮州鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('潮州鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'新園鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('新園鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'崁頂鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('崁頂鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'新埤鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('新埤鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'南州鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('南州鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'東港鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('東港鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'林邊鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('林邊鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'佳冬鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('佳冬鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'春日鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('春日鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'獅子鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('獅子鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'琉球鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('琉球鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'枋山鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('枋山鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'牡丹鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('牡丹鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'滿州鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('滿州鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'車城鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('車城鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'恆春鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('恆春鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'枋寮鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('枋寮鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizei
+                        opacity: root.regiongroup_button_opacityi
+                    Button:
+                        text:'長濱鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('長濱鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizej
+                        opacity: root.regiongroup_button_opacityj
+                    Button:
+                        text:'海端鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('海端鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizej
+                        opacity: root.regiongroup_button_opacityj
+                    Button:
+                        text:'池上鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('池上鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizej
+                        opacity: root.regiongroup_button_opacityj
+                    Button:
+                        text:'成功鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('成功鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizej
+                        opacity: root.regiongroup_button_opacityj
+                    Button:
+                        text:'關山鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('關山鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizej
+                        opacity: root.regiongroup_button_opacityj
+                    Button:
+                        text:'東河鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('東河鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizej
+                        opacity: root.regiongroup_button_opacityj
+                    Button:
+                        text:'鹿野鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('鹿野鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizej
+                        opacity: root.regiongroup_button_opacityj
+                    Button:
+                        text:'延平鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('延平鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizej
+                        opacity: root.regiongroup_button_opacityj
+                    Button:
+                        text:'卑南鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('卑南鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizej
+                        opacity: root.regiongroup_button_opacityj
+                    Button:
+                        text:'臺東市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('臺東市')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizej
+                        opacity: root.regiongroup_button_opacityj
+                    Button:
+                        text:'太麻里鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('太麻里鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizej
+                        opacity: root.regiongroup_button_opacityj
+                    Button:
+                        text:'綠島鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('綠島鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizej
+                        opacity: root.regiongroup_button_opacityj
+                    Button:
+                        text:'達仁鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('達仁鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizej
+                        opacity: root.regiongroup_button_opacityj
+                    Button:
+                        text:'大武鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大武鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizej
+                        opacity: root.regiongroup_button_opacityj
+                    Button:
+                        text:'蘭嶼鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('蘭嶼鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizej
+                        opacity: root.regiongroup_button_opacityj
+                    Button:
+                        text:'金峰鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('金峰鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizej
+                        opacity: root.regiongroup_button_opacityj
+                    Button:
+                        text:'秀林鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('秀林鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizek
+                        opacity: root.regiongroup_button_opacityk
+                    Button:
+                        text:'新城鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('新城鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizek
+                        opacity: root.regiongroup_button_opacityk
+                    Button:
+                        text:'花蓮市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('花蓮市')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizek
+                        opacity: root.regiongroup_button_opacityk
+                    Button:
+                        text:'吉安鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('吉安鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizek
+                        opacity: root.regiongroup_button_opacityk
+                    Button:
+                        text:'壽豐鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('壽豐鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizek
+                        opacity: root.regiongroup_button_opacityk
+                    Button:
+                        text:'萬榮鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('萬榮鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizek
+                        opacity: root.regiongroup_button_opacityk
+                    Button:
+                        text:'鳳林鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('鳳林鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizek
+                        opacity: root.regiongroup_button_opacityk
+                    Button:
+                        text:'豐濱鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('豐濱鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizek
+                        opacity: root.regiongroup_button_opacityk
+                    Button:
+                        text:'光復鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('光復鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizek
+                        opacity: root.regiongroup_button_opacityk
+                    Button:
+                        text:'卓溪鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('卓溪鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizek
+                        opacity: root.regiongroup_button_opacityk
+                    Button:
+                        text:'瑞穗鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('瑞穗鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizek
+                        opacity: root.regiongroup_button_opacityk
+                    Button:
+                        text:'玉里鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('玉里鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizek
+                        opacity: root.regiongroup_button_opacityk
+                    Button:
+                        text:'富里鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('富里鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizek
+                        opacity: root.regiongroup_button_opacityk
+                    Button:
+                        text:'白沙鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('白沙鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizel
+                        opacity: root.regiongroup_button_opacityl
+                    Button:
+                        text:'西嶼鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('西嶼鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizel
+                        opacity: root.regiongroup_button_opacityl
+                    Button:
+                        text:'湖西鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('湖西鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizel
+                        opacity: root.regiongroup_button_opacityl
+                    Button:
+                        text:'馬公市'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('馬公市')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizel
+                        opacity: root.regiongroup_button_opacityl
+                    Button:
+                        text:'望安鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('望安鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizel
+                        opacity: root.regiongroup_button_opacityl
+                    Button:
+                        text:'七美鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('七美鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizel
+                        opacity: root.regiongroup_button_opacityl
+                    Button:
+                        text:'安樂區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('安樂區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizem
+                        opacity: root.regiongroup_button_opacitym
+                    Button:
+                        text:'中山區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('中山區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizem
+                        opacity: root.regiongroup_button_opacitym
+                    Button:
+                        text:'中正區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('中正區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizem
+                        opacity: root.regiongroup_button_opacitym
+                    Button:
+                        text:'七堵區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('七堵區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizem
+                        opacity: root.regiongroup_button_opacitym
+                    Button:
+                        text:'信義區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('信義區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizem
+                        opacity: root.regiongroup_button_opacitym
+                    Button:
+                        text:'仁愛區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('仁愛區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizem
+                        opacity: root.regiongroup_button_opacitym
+                    Button:
+                        text:'暖暖區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('暖暖區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizem
+                        opacity: root.regiongroup_button_opacitym
+                    Button:
+                        text:'北區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('北區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizen
+                        opacity: root.regiongroup_button_opacityn
+                    Button:
+                        text:'香山區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('香山區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizen
+                        opacity: root.regiongroup_button_opacityn
+                    Button:
+                        text:'東區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('東區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizen
+                        opacity: root.regiongroup_button_opacityn
+                    Button:
+                        text:'東區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('東區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeo
+                        opacity: root.regiongroup_button_opacityo
+                    Button:
+                        text:'西區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('西區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeo
+                        opacity: root.regiongroup_button_opacityo
+                    Button:
+                        text:'北投區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('北投區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizep
+                        opacity: root.regiongroup_button_opacityp
+                    Button:
+                        text:'士林區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('士林區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizep
+                        opacity: root.regiongroup_button_opacityp
+                    Button:
+                        text:'內湖區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('內湖區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizep
+                        opacity: root.regiongroup_button_opacityp
+                    Button:
+                        text:'中山區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('中山區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizep
+                        opacity: root.regiongroup_button_opacityp
+                    Button:
+                        text:'大同區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大同區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizep
+                        opacity: root.regiongroup_button_opacityp
+                    Button:
+                        text:'松山區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('松山區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizep
+                        opacity: root.regiongroup_button_opacityp
+                    Button:
+                        text:'南港區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('南港區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizep
+                        opacity: root.regiongroup_button_opacityp
+                    Button:
+                        text:'中正區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('中正區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizep
+                        opacity: root.regiongroup_button_opacityp
+                    Button:
+                        text:'萬華區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('萬華區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizep
+                        opacity: root.regiongroup_button_opacityp
+                    Button:
+                        text:'信義區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('信義區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizep
+                        opacity: root.regiongroup_button_opacityp
+                    Button:
+                        text:'大安區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大安區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizep
+                        opacity: root.regiongroup_button_opacityp
+                    Button:
+                        text:'文山區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('文山區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizep
+                        opacity: root.regiongroup_button_opacityp
+                    Button:
+                        text:'楠梓區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('楠梓區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'左營區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('左營區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'三民區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('三民區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'鼓山區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('鼓山區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'苓雅區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('苓雅區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'新興區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('新興區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'前金區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('前金區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'鹽埕區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('鹽埕區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'前鎮區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('前鎮區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'旗津區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('旗津區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'小港區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('小港區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'那瑪夏區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('那瑪夏區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'甲仙區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('甲仙區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'六龜區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('六龜區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'杉林區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('杉林區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'內門區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('內門區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'茂林區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('茂林區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'美濃區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('美濃區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'旗山區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('旗山區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'田寮區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('田寮區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'湖內區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('湖內區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'茄萣區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('茄萣區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'阿蓮區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('阿蓮區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'路竹區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('路竹區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'永安區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('永安區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'岡山區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('岡山區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'燕巢區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('燕巢區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'彌陀區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('彌陀區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'橋頭區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('橋頭區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'大樹區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大樹區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'梓官區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('梓官區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'大社區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大社區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'仁武區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('仁武區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'鳥松區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('鳥松區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'大寮區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大寮區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'鳳山區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('鳳山區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'林園區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('林園區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'桃源區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('桃源區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeq
+                        opacity: root.regiongroup_button_opacityq
+                    Button:
+                        text:'石門區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('石門區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'三芝區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('三芝區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'金山區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('金山區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'淡水區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('淡水區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'萬里區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('萬里區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'八里區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('八里區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'汐止區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('汐止區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'林口區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('林口區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'五股區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('五股區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'瑞芳區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('瑞芳區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'蘆洲區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('蘆洲區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'雙溪區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('雙溪區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'三重區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('三重區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'貢寮區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('貢寮區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'平溪區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('平溪區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'泰山區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('泰山區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'新莊區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('新莊區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'石碇區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('石碇區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'板橋區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('板橋區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'深坑區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('深坑區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'永和區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('永和區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'樹林區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('樹林區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'中和區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('中和區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'土城區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('土城區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'新店區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('新店區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'坪林區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('坪林區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'鶯歌區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('鶯歌區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'三峽區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('三峽區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'烏來區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('烏來區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizer
+                        opacity: root.regiongroup_button_opacityr
+                    Button:
+                        text:'北屯區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('北屯區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'西屯區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('西屯區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'北區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('北區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'南屯區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('南屯區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'西區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('西區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'東區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('東區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'中區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('中區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'南區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('南區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'和平區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('和平區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'大甲區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大甲區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'大安區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大安區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'外埔區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('外埔區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'后里區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('后里區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'清水區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('清水區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'東勢區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('東勢區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'神岡區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('神岡區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'龍井區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('龍井區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'石岡區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('石岡區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'豐原區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('豐原區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'梧棲區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('梧棲區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'新社區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('新社區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'沙鹿區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('沙鹿區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'大雅區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大雅區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'潭子區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('潭子區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'大肚區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大肚區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'太平區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('太平區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'烏日區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('烏日區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'大里區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大里區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'霧峰區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('霧峰區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizes
+                        opacity: root.regiongroup_button_opacitys
+                    Button:
+                        text:'安南區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('安南區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'中西區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('中西區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'安平區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('安平區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'東區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('東區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'南區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('南區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'北區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('北區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'白河區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('白河區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'後壁區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('後壁區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'鹽水區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('鹽水區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'新營區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('新營區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'東山區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('東山區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'北門區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('北門區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'柳營區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('柳營區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'學甲區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('學甲區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'下營區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('下營區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'六甲區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('六甲區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'南化區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('南化區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'將軍區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('將軍區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'楠西區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('楠西區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'麻豆區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('麻豆區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'官田區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('官田區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'佳里區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('佳里區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'大內區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('大內區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'七股區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('七股區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'玉井區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('玉井區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'善化區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('善化區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'西港區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('西港區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'山上區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('山上區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'安定區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('安定區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'新市區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('新市區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'左鎮區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('左鎮區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'新化區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('新化區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'永康區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('永康區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'歸仁區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('歸仁區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'關廟區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('關廟區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'龍崎區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('龍崎區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'仁德區'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('仁德區')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizet
+                        opacity: root.regiongroup_button_opacityt
+                    Button:
+                        text:'南竿鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('南竿鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeu
+                        opacity: root.regiongroup_button_opacityu
+                    Button:
+                        text:'北竿鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('北竿鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeu
+                        opacity: root.regiongroup_button_opacityu
+                    Button:
+                        text:'莒光鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('莒光鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeu
+                        opacity: root.regiongroup_button_opacityu
+                    Button:
+                        text:'東引鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('東引鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizeu
+                        opacity: root.regiongroup_button_opacityu
+                    Button:
+                        text:'金城鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('金城鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizev
+                        opacity: root.regiongroup_button_opacityv
+                    Button:
+                        text:'金湖鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('金湖鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizev
+                        opacity: root.regiongroup_button_opacityv
+                    Button:
+                        text:'金沙鎮'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('金沙鎮')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizev
+                        opacity: root.regiongroup_button_opacityv
+                    Button:
+                        text:'金寧鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('金寧鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizev
+                        opacity: root.regiongroup_button_opacityv
+                    Button:
+                        text:'烈嶼鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('烈嶼鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizev
+                        opacity: root.regiongroup_button_opacityv
+                    Button:
+                        text:'烏坵鄉'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.region_toggle_expand('烏坵鄉')
+                        size_hint_y: None
+                        height:root.regiongroup_button_sizev
+                        opacity: root.regiongroup_button_opacityv
+
+                Label:
+                    text:'顏色'
+                    font_name: 'fonts/font1.ttf'
+                    size_hint_y: None
+                    height:root.color_label_size
+                    color: 0 , 0 , 0 , 1
+                ColorDropDown:
+                    orientation:'lr-tb'
+                    Button:
+                        text:root.color_main_button_text
+                        background_normal: 'images/dropdown_normal.png'
+                        background_down: 'images/dropdown_down.png'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand(root.color_main_button_text)
+                        size_hint_y: None
+                        height:100
+                    Button:
+                        text:'咖啡色'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand('咖啡色','brown')
+                        background_normal: 'images/brown_normal.png'
+                        background_down: 'images/brown_down.png'
+                        size_hint_y: None
+                        color: 1, 1, 1, root.color_button_opacity
+                        opacity: root.color_button_opacity
+                        height:root.color_button_size
+                    Button:
+                        text:'土耳其藍'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand('土耳其藍','turquoise')
+                        background_normal: 'images/turquoise_normal.png'
+                        background_down: 'images/turquoise_down.png'
+                        size_hint_y: None
+                        color: 0, 0, 0, root.color_button_opacity
+                        opacity: root.color_button_opacity
+                        height:root.color_button_size
+                    Button:
+                        text:'橘色'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand('橘色','orange')
+                        background_normal: 'images/orange_normal.png'
+                        background_down: 'images/orange_down.png'
+                        size_hint_y: None
+                        color: 0, 0, 0, root.color_button_opacity
+                        opacity: root.color_button_opacity
+                        height:root.color_button_size
+                    Button:
+                        text:'灰色'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand('灰色','gray')
+                        background_normal: 'images/gray_normal.png'
+                        background_down: 'images/gray_down.png'
+                        size_hint_y: None
+                        color: 1, 1, 1, root.color_button_opacity
+                        opacity: root.color_button_opacity
+                        height:root.color_button_size
+                    Button:
+                        text:'白色'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand('白色','white')
+                        background_normal: 'images/white_normal.png'
+                        background_down: 'images/white_down.png'
+                        size_hint_y: None
+                        color: 0, 0, 0, root.color_button_opacity
+                        opacity: root.color_button_opacity
+                        height:root.color_button_size
+                    Button:
+                        text:'米色'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand('米色','beige')
+                        background_normal: 'images/beige_normal.png'
+                        background_down: 'images/beige_down.png'
+                        size_hint_y: None
+                        color: 0, 0, 0, root.color_button_opacity
+                        opacity: root.color_button_opacity
+                        height:root.color_button_size
+                    Button:
+                        text:'粉紅色'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand('粉紅色','pink')
+                        background_normal: 'images/pink_normal.png'
+                        background_down: 'images/pink_down.png'
+                        size_hint_y: None
+                        color: 0, 0, 0, root.color_button_opacity
+                        opacity: root.color_button_opacity
+                        height:root.color_button_size
+                    Button:
+                        text:'紅色'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand('紅色','red')
+                        background_normal: 'images/red_normal.png'
+                        background_down: 'images/red_down.png'
+                        size_hint_y: None
+                        color: 1, 1, 1, root.color_button_opacity
+                        opacity: root.color_button_opacity
+                        height:root.color_button_size
+                    Button:
+                        text:'紫色'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand('紫色','purple')
+                        background_normal: 'images/purple_normal.png'
+                        background_down: 'images/purple_down.png'
+                        size_hint_y: None
+                        color: 1, 1, 1, root.color_button_opacity
+                        opacity: root.color_button_opacity
+                        height:root.color_button_size
+                    Button:
+                        text:'綠色'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand('綠色','green')
+                        background_normal: 'images/green_normal.png'
+                        background_down: 'images/green_down.png'
+                        size_hint_y: None
+                        color: 1, 1, 1, root.color_button_opacity
+                        opacity: root.color_button_opacity
+                        height:root.color_button_size
+                    Button:
+                        text:'藍色'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand('藍色','blue')
+                        background_normal: 'images/blue_normal.png'
+                        background_down: 'images/blue_down.png'
+                        size_hint_y: None
+                        color: 1, 1, 1, root.color_button_opacity
+                        opacity: root.color_button_opacity
+                        height:root.color_button_size
+                    Button:
+                        text:'金色'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand('金色','gold')
+                        background_normal: 'images/gold_normal.png'
+                        background_down: 'images/gold_down.png'
+                        size_hint_y: None
+                        color: 0, 0, 0, root.color_button_opacity
+                        opacity: root.color_button_opacity
+                        height:root.color_button_size
+                    Button:
+                        text:'銀色'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand('銀色','silver')
+                        background_normal: 'images/silver_normal.png'
+                        background_down: 'images/silver_down.png'
+                        size_hint_y: None
+                        color: 0, 0, 0, root.color_button_opacity
+                        opacity: root.color_button_opacity
+                        height:root.color_button_size
+                    Button:
+                        text:'黃色'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand('黃色','yellow')
+                        background_normal: 'images/yellow_normal.png'
+                        background_down: 'images/yellow_down.png'
+                        size_hint_y: None
+                        color: 0, 0, 0, root.color_button_opacity
+                        opacity: root.color_button_opacity
+                        height:root.color_button_size
+                    Button:
+                        text:'黑色'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand('黑色','black')
+                        background_normal: 'images/black_normal.png'
+                        background_down: 'images/black_down.png'
+                        size_hint_y: None
+                        color: 1, 1, 1, root.color_button_opacity
+                        opacity: root.color_button_opacity
+                        height:root.color_button_size
+                    Button:
+                        text:'古銅色'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand('古銅色','copper')
+                        background_normal: 'images/copper_normal.png'
+                        background_down: 'images/copper_down.png'
+                        size_hint_y: None
+                        color: 1, 1, 1, root.color_button_opacity
+                        opacity: root.color_button_opacity
+                        height:root.color_button_size
+                    Button:
+                        text:'透明'
+                        font_name: 'fonts/font1.ttf'
+                        on_release: root.color_toggle_expand('透明','clear')
+                        background_normal: 'images/clear_normal.png'
+                        background_down: 'images/clear_down.png'
+                        size_hint_y: None
+                        color: 0, 0, 0, root.color_button_opacity
+                        opacity: root.color_button_opacity
+                        height:root.color_button_size
+        Button:
+            text:'送出'
+            font_name: 'fonts/font1.ttf'
+            background_normal: 'images/green_down.png'
+            background_down: 'images/yellow_normal.png'
+            color: 0 , 0 , 0 , 1
+            size_hint_y: 0.1
+            on_release:root.send()
+
+<ResultScreen>:
+    background_color: 1, 1, 1, 1
+    canvas:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    ResultScreenBoxLayout:
+        orientation:'vertical'
+        ResultScreenTitleBoxLayout: 
+            orientation:'horizontal'
+            size_hint_y: None
+            height: 70
+            Button:
+                background_normal: 'images/return_normal.png'
+                background_down: 'images/return_down.png'
+                color: 0 , 0 , 0 , 1
+                size_hint_x: None
+                width: 70
+                on_release: 
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'selection'
+            Label:
+                text:'result'
+                font_name: 'fonts/font1.ttf'
+                color: 0 , 0 , 0 , 1
+            Button:
+                background_normal: 'images/refresh_normal.png'
+                background_down: 'images/refresh_down.png'
+                color: 0 , 0 , 0 , 1
+                size_hint_x: None
+                width: 70
+                on_release: root.refresh()
+        ResultScreenStackLayout:
+            orientation: 'tb-lr'
+            Label:
+                size_hint: 0.5, 0.16
+                text:root.result_text
+                font_name: 'fonts/font1.ttf'
+                color: 0, 0, 0, 1
+            ResultBoxLayoutA:
+                orientation:'vertical'
+                size_hint: 0.5, 0.33
+                opacity: root.result_opacitya
+                Label:
+                    text: '上衣'
+                    font_name: 'fonts/font1.ttf'
+                    color: 0.5 , 0.5 , 0.5 , 1
+                    size_hint_y: 0.2
+                AsyncImage:
+                    source: root.resultimagea
+                    allowstretch: True
+                    keep_ratio: False
+                Label:
+                    text: root.resultlabela
+                    font_name: 'fonts/font1.ttf'
+                    color: 0 , 0 , 0 , 1
+                    size_hint_y: 0.2
+            ResultBoxLayoutB:
+                orientation:'vertical'
+                size_hint: 0.5, 0.33
+                opacity: root.result_opacityb
+                Label:
+                    text: '下裝'
+                    font_name: 'fonts/font1.ttf'
+                    color: 0.5 , 0.5 , 0.5 , 1
+                    size_hint_y: 0.2
+                AsyncImage:
+                    source: root.resultimageb
+                    allowstretch: True
+                    keep_ratio: False
+                Label:
+                    text: root.resultlabelb
+                    font_name: 'fonts/font1.ttf'
+                    color: 0 , 0 , 0 , 1
+                    size_hint_y: 0.2
+            ResultBoxLayoutC:
+                orientation:'vertical'
+                size_hint: 0.5, 0.33
+                opacity: root.result_opacityc
+                Label:
+                    text: '外套'
+                    font_name: 'fonts/font1.ttf'
+                    color: 0.5 , 0.5 , 0.5 , 1
+                    size_hint_y: 0.2
+                AsyncImage:
+                    source: root.resultimagec
+                    allowstretch: True
+                    keep_ratio: False
+                Label:
+                    text: root.resultlabelc
+                    font_name: 'fonts/font1.ttf'
+                    color: 0 , 0 , 0 , 1
+                    size_hint_y: 0.2
+            ResultBoxLayoutD:
+                orientation:'vertical'
+                size_hint: 0.5, 0.33
+                opacity: root.result_opacityd
+                Label:
+                    text: '鞋子'
+                    font_name: 'fonts/font1.ttf'
+                    color: 0.5 , 0.5 , 0.5 , 1
+                    size_hint_y: 0.2
+                AsyncImage:
+                    source: root.resultimaged
+                    allowstretch: True
+                    keep_ratio: False
+                Label:
+                    text: root.resultlabeld
+                    font_name: 'fonts/font1.ttf'
+                    color: 0 , 0 , 0 , 1
+                    size_hint_y: 0.2
+            ResultBoxLayoutE:
+                orientation:'vertical'
+                size_hint: 0.5, 0.33
+                opacity: root.result_opacitye
+                Label:
+                    text: '配件'
+                    font_name: 'fonts/font1.ttf'
+                    color: 0.5 , 0.5 , 0.5 , 1
+                    size_hint_y: 0.2
+                AsyncImage:
+                    source: root.resultimagee
+                    allowstretch: True
+                    keep_ratio: False
+                Label:
+                    text: root.resultlabele
+                    font_name: 'fonts/font1.ttf'
+                    color: 0 , 0 , 0 , 1
+                    size_hint_y: 0.2
