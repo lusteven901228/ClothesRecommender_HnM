@@ -236,10 +236,14 @@ def get_rand_combinations(give_gender, give_color, give_temp):
     ran_outer(outerlist, showobjectlst)
     ran(shoeslist, showobjectlst)
     ran(acclist, showobjectlst)
+    allmatch_bottom = ('black', 'blue')
+    allmatch_shoes = ('black', 'white', 'beige', 'gray')
     if not showobjectlst[1] and not bool_dresses:
-        showobjectlst[1] = ran(sieve(finallist, give_temp, 'black', give_gender)[1], showobjectlst[:])
+        showobjectlst[1] = ran(sieve(finallist, give_temp, allmatch_bottom[random.randint(0,1)], give_gender)[1], showobjectlst[:])
     if not showobjectlst[0]:
-        showobjectlst[0] = ran(sieve(finallist, give_temp, 'white', give_gender)[1], showobjectlst[:])
+        showobjectlst[0] = ran(sieve(finallist, give_temp, 'white', give_gender)[0], showobjectlst[:])
+    if not showobjectlst[3]:
+        showobjectlst[3] = ran(sieve(finallist, give_temp, allmatch_shoes[random.randint(0,3)], give_gender)[3], showobjectlst[:])
     return showobjectlst
 
 if __name__ == "__main__":
