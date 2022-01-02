@@ -192,7 +192,6 @@ def ran_bottom(alist, showobjectlst):
     i = random.randint(0,len(alist)-1)
     showobject = alist[i]
     showobjectlst.append(showobject)
-    # 如果上衣是dress, 不要輸出bottom
     return showobject
 
 def ran_outer(alist, showobjectlst):
@@ -237,11 +236,11 @@ def get_rand_combinations(give_gender, give_color, give_temp):
     ran_outer(outerlist, showobjectlst)
     ran(shoeslist, showobjectlst)
     ran(acclist, showobjectlst)
-    if not showobjectlst[1]:
+    if not showobjectlst[1] and not bool_dresses:
         showobjectlst[1] = ran(sieve(finallist, give_temp, 'black', give_gender)[1], showobjectlst[:])
     if not showobjectlst[0]:
         showobjectlst[0] = ran(sieve(finallist, give_temp, 'white', give_gender)[1], showobjectlst[:])
     return showobjectlst
 
 if __name__ == "__main__":
-    print(*(i.url if i else 0 for i in get_rand_combinations('ladies', 'brown', 23.5)), sep = '\n')
+    print(*(i.url if i else 0 for i in get_rand_combinations('ladies', 'brown', 19.4)), sep = '\n')

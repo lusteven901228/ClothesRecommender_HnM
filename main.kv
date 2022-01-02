@@ -11,19 +11,16 @@
         orientation:'vertical'
         SelectionTitleBoxLayout:
             orientation:'horizontal'
-            size_hint_y: None
-            height: 70
+            size_hint_y: .0825
             Label:
                 text:'篩選'
                 font_name: 'fonts/font1.ttf'
-                # ont_name: 'font/font1.ttf'
                 color: 0 , 0 , 0 , 1
             Button:
                 background_normal: 'images/refresh_normal.png'
                 background_down: 'images/refresh_down.png'
                 color: 0 , 0 , 0 , 1
-                size_hint_x: None
-                width: 70
+                size_hint_x: 0.178
                 on_release: root.reset()
         ScrollView:
             SubGridLayout:
@@ -3033,14 +3030,12 @@
         orientation:'vertical'
         ResultScreenTitleBoxLayout: 
             orientation:'horizontal'
-            size_hint_y: None
-            height: 70
+            size_hint_y: 0.075
             Button:
                 background_normal: 'images/return_normal.png'
                 background_down: 'images/return_down.png'
                 color: 0 , 0 , 0 , 1
-                size_hint_x: None
-                width: 70
+                size_hint_x: 0.162
                 on_release: 
                     root.manager.transition.direction = 'right'
                     root.manager.current = 'selection'
@@ -3052,8 +3047,7 @@
                 background_normal: 'images/refresh_normal.png'
                 background_down: 'images/refresh_down.png'
                 color: 0 , 0 , 0 , 1
-                size_hint_x: None
-                width: 70
+                size_hint_x: 0.207
                 on_release: root.refresh()
         ResultScreenStackLayout:
             orientation: 'tb-lr'
