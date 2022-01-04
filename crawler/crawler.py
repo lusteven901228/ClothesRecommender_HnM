@@ -24,7 +24,7 @@ def HnM(thrs):
         while line:=f.readline():
             q.put(line)
     with open('HnM.csv','w',encoding='utf-8') as f:
-        f.write('filename pic_url label1 label2 label3 color name\n')
+        f.write('filename\tpic_url\tlabel1\tlabel2\tlabel3\tcolor\tname\n')
     t = []  # list of threads
     for _ in range(thrs):
         t.append(Thread(target=HnM_Crawler_thread))  # Calling target each thread
