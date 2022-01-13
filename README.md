@@ -2,8 +2,7 @@
 Repo:[https://github.com/lusteven901228/What-to-Wear](https://github.com/lusteven901228/What-to-Wear)
 ### 110-1 商管程式設計 第58組
 展示影片：
-{%youtube Dtp9iZDL5ZY%}
-![程式邏輯圖解](https://i.imgur.com/He5SG3d.png)
+[![展示影片](https://img.youtube.com/vi/JFuwuWfyNZo/maxresdefault.jpg)](https://youtu.be/JFuwuWfyNZo)
 
 ## Requirements
 * python >=3.8 (3.9 used)
@@ -15,9 +14,22 @@ Repo:[https://github.com/lusteven901228/What-to-Wear](https://github.com/lusteve
 
 ## 創作理念
 
-#待補
+你是否在出門時，認為今日天氣晴朗而著短袖出門，但傍晚氣溫驟降，開始後悔出門時沒有多披件大衣？<br />
+你又是否常常早上站在衣櫃前猶豫不決，不知道該穿什麼好？<br />
+你會不會在買衣服時，卻又不知道那些單品符合現在溫度的需求？<br />
+<br />
+因此，本團隊製作了一個方便操作，易上手的APP，能夠根據當日的天氣預報，<br />
+並在使用者提供性別，所在地區及顏色偏好後，輸出符合當日天氣狀況的穿搭範例，<br />
+並提供市面上服裝的圖案範例，解決這類氣候狀況與溫度問題。<br />
 
 ## 程式說明
+
+![程式邏輯圖解](https://i.imgur.com/He5SG3d.png)
+* crawler.py: 資料庫擷取(爬蟲)
+* allclothes.csv: 資料庫
+* main.py: 前端執行檔
+* main.kv: kivy需求
+* buildozer.spec: 包裝config
 ### crawler.py
 
 #### 創造一個FIFO的Queue, 放入所有的url
